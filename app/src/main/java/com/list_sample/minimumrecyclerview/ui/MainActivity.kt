@@ -3,6 +3,7 @@ package com.list_sample.minimumrecyclerview.ui
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.DefaultItemAnimator
+import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import com.list_sample.minimumrecyclerview.R
@@ -26,6 +27,9 @@ class MainActivity : AppCompatActivity() {
         recyclerView.layoutManager = layoutManager
         recyclerView.itemAnimator = DefaultItemAnimator()
         recyclerView.adapter = adapter
+
+        // 区切り線をセットしてやる
+        recyclerView.addItemDecoration(DividerItemDecoration(this, layoutManager.orientation))
 
         // データをリストに入れて渡す。
         prepareData()
